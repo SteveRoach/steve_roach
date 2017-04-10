@@ -7,6 +7,15 @@ RSpec.feature "Render Cat Play Pages", :type => :feature do
         # Page title 
         expect(page).to have_title('Cat Play')  
  
+        # Favicon  
+        icon_link_count = page.all(:css, 'link[rel~="icon"]', visible: false).count 
+        expect(icon_link_count).to eql(1)  
+ 
+        page.all(:css, 'link[rel~="icon"]', visible: false).each do |fav|  
+            visit fav[:href]  
+            expect(page).to have_http_status(:success)  
+        end  
+
     end 
  
     scenario "displays the Cat Play Home page elements correctly - via URL" do  
@@ -15,6 +24,15 @@ RSpec.feature "Render Cat Play Pages", :type => :feature do
         # Page title 
         expect(page).to have_title('Cat Play')  
  
+        # Favicon  
+        icon_link_count = page.all(:css, 'link[rel~="icon"]', visible: false).count 
+        expect(icon_link_count).to eql(1)  
+ 
+        page.all(:css, 'link[rel~="icon"]', visible: false).each do |fav|  
+            visit fav[:href]  
+            expect(page).to have_http_status(:success)  
+        end  
+
     end 
  
     scenario "displays the Cat Play Journal elements correctly" do  
@@ -23,7 +41,16 @@ RSpec.feature "Render Cat Play Pages", :type => :feature do
         # Page title 
         expect(page).to have_title('Cat Play | Journal')  
  
-    end 
+        # Favicon  
+        icon_link_count = page.all(:css, 'link[rel~="icon"]', visible: false).count 
+        expect(icon_link_count).to eql(1)  
+ 
+        page.all(:css, 'link[rel~="icon"]', visible: false).each do |fav|  
+            visit fav[:href]  
+            expect(page).to have_http_status(:success)  
+        end  
+
+     end 
  
     scenario "displays the Cat Play Technical elements correctly" do  
         visit "/cp_technical"  
@@ -31,7 +58,16 @@ RSpec.feature "Render Cat Play Pages", :type => :feature do
         # Page title 
         expect(page).to have_title('Cat Play | Technical')  
  
-    end 
+        # Favicon  
+        icon_link_count = page.all(:css, 'link[rel~="icon"]', visible: false).count 
+        expect(icon_link_count).to eql(1)  
+ 
+        page.all(:css, 'link[rel~="icon"]', visible: false).each do |fav|  
+            visit fav[:href]  
+            expect(page).to have_http_status(:success)  
+        end  
+
+     end 
  
     scenario "displays the Cat Play Contact elements correctly" do  
         visit "/cp_contact"  
@@ -39,6 +75,15 @@ RSpec.feature "Render Cat Play Pages", :type => :feature do
         # Page title 
         expect(page).to have_title('Cat Play | Contact')  
  
-    end 
+        # Favicon  
+        icon_link_count = page.all(:css, 'link[rel~="icon"]', visible: false).count 
+        expect(icon_link_count).to eql(1)  
+ 
+        page.all(:css, 'link[rel~="icon"]', visible: false).each do |fav|  
+            visit fav[:href]  
+            expect(page).to have_http_status(:success)  
+        end  
+
+     end 
 end 
 
