@@ -86,6 +86,18 @@ h1, h2, h3, p {
 	transform: translateY(-210px);
 }
 
+.cph__parallax--group-3 {
+	position: relative;
+	height:1200px;
+	width: 100vw;
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	z-index: 1;
+	-webkit-transform: translateY(-210px);
+	transform: translateY(-210px);
+	background-image: url(image_path('cat_pirate_bk.jpg'));
+}
+
 .cph__parallax--layer {
 	position: absolute;
 	height: 100vh;
@@ -140,7 +152,6 @@ h1, h2, h3, p {
 /* Content container */
 .cph__content {
 	background-color: $cph__home-page--background-colour;
-	height: 1000px;
 }
 
 /* Logo */
@@ -329,6 +340,26 @@ h1, h2, h3, p {
 	margin-top: 45px;
 	@include box_sizing; 
 }
+
+.bk-rd {
+  background-color: red;
+  opacity: 0.5;
+} 
+
+.bk-bl {
+  background-color: blue;
+  opacity: 0.5;
+} 
+
+.bk-gn {
+  background-color: green;
+  opacity: 0.5;
+} 
+
+.bk-yl {
+  background-color: yellow;
+  opacity: 0.5;
+} 
 
 /* MEDIA QUERIES */
 @media only screen and (min-width : 400px) {
