@@ -50,20 +50,4 @@ RSpec.describe CatPlayController, type: :controller do
     end 
   end
 
-  describe "GET #cp_contact" do
-    before(:each) { get :cp_contact } 
-
-    it "returns http success" do
-      expect(response).to have_http_status(:success)
-    end
-
-    it "renders the layout; application" do 
-      expect(response).to render_template(layout: :application) 
-    end 
-
-    it "renders the template; cp_contact" do 
-      expect(response).to render_template(:cp_contact) 
-    end 
-  end
-
 end

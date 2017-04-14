@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   get 'cp_home' => 'cat_play#cp_home'
   get 'cp_journal' => 'cat_play#cp_journal'
   get 'cp_technical' => 'cat_play#cp_technical'
-  get 'cp_contact' => 'cat_play#cp_contact'
+
+  resources :cp_messages, only: [:new, :create]
 end

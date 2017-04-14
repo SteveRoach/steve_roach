@@ -73,7 +73,7 @@ RSpec.feature "Render Cat Play Pages", :type => :feature do
      end 
  
     scenario "displays the Cat Play Contact elements correctly" do  
-        visit "/cp_contact"  
+        visit "/cp_messages/new"  
  
         # Page title 
         expect(page).to have_title('Cat Play | Contact')  

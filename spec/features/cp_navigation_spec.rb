@@ -19,9 +19,9 @@ RSpec.feature "Site navigation", :type => :feature do
         expect(page).to have_title('Cat Play | Technical') 
     end 
  
-    scenario "'/cp_contact' navigation goes to the Contact page" do  
+    scenario "'/cp_messages/new' navigation goes to the Contact page" do  
         visit "/" 
-        click_link('', :href => '/cp_contact') 
+        click_link('', :href => '/cp_messages/new') 
         expect(page).to have_title('Cat Play | Contact') 
     end 
  

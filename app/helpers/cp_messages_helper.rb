@@ -1,0 +1,2 @@
+module CpMessagesHelper
+end
