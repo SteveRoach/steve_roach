@@ -258,8 +258,6 @@ h1, h2, h3, p {
 	top: 50%;
 	-webkit-transform: translateY(-50%);
 	transform: translateY(-50%);
-	border: 1vw solid transparent;
-	border-radius: 1vw;
 }
 
 .cpho__pages-image-container img {
@@ -269,7 +267,7 @@ h1, h2, h3, p {
 	bottom: auto;
 	-webkit-transform: translate(-50%, -50%);
 	transform: translate(-50%, -50%);
-	height: 70%;
+	height: 90%;
 }
 
 .cpho__pages-image-container-odd {
@@ -295,21 +293,6 @@ h1, h2, h3, p {
 .cpho__pages-image-container-contact {
 	width: 25.2%;
 	height: 100%;
-}
-
-.cpho__pages-link:hover .cpho__pages-image-container-journal {
-	border-color: $cpho__pages-link-image--border-colour--journal;
-	background-color: $cpho__pages-link-image--background-colour;
-}
-
-.cpho__pages-link:hover .cpho__pages-image-container-technical {
-	border-color: $cpho__pages-link-image--border-colour--technical;
-	background-color: $cpho__pages-link-image--background-colour;
-}
-
-.cpho__pages-link:hover .cpho__pages-image-container-contact {
-	border-color: $cpho__pages-link-image--border-colour--contact;
-	background-color: $cpho__pages-link-image--background-colour;
 }
 
 .cpho__pages-text {
