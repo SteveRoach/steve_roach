@@ -17,10 +17,9 @@ $cpho__pages--font-family: 'Coming Soon', Arial, sans-serif;
 /* Mobile-first fonts
 (font-style [font-variant] font-weight font-size/line-height font-family)
 */
-$cp__site--font: normal bold 50px/100% $cpho__pages--font-family;
-$cpho__logo--font: normal bold 50px/100% $cpho__pages--font-family;
+$cp__site--font: normal bold 50px/100% $cp__site--font-family;
+$cpho__logo--font: normal bold 50px/100% $cpho__logo--font-family;
 $cpho__pages--font: normal 900 3em/100% $cpho__pages--font-family;
-$cpco__logo--font: normal bold 50px/100% $cpho__logo--font-family;
 
 /* COLOURS */
 $cpho__home-page--background-colour: yellow;
@@ -349,131 +348,58 @@ h1, h2, h3, p {
 } 
 
 /* CAT PLAY CONTACT PAGE */
-/* Header */
-.cpco__header-container {
-	display: flex;
-	justify-content: center;
-}
-
+/* Banner */
 .cpco__header {
-	display: flex;
-	align-items: center;
-	background-color: black;
-	border: 0.7vw solid red;
-	border-radius: 1vw;
-	margin: 1vw 0;
+	position: relative;
+	height: 55px;
 }
 
-.cpco__header img {
-	height: 10vw;
-	padding: 1vw 0;
+.cpco__banner-label-container {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	height: 90%;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	padding: 10px 20px;
+	background-color: black;
+	border: 5px solid red;
+	border-radius: 20px;
+}
+
+.cpco__header-image-container {
+	height: 100%;
+}
+
+.cpco__header-image-container img {
+	height: 100%;
+	max-height: 100px;
 }
 
 .cpco__header-text {
 	font: $cpho__pages--font;
 	color: $cpho__pages-link-text--colour;
-	padding: 1.5vw 2vw 0 0;
-	font-size: 7vw;
+	font-size: 1.4em;
+	padding-top: 3px;
 }
 
 /* Sub-header */
-.cpco__sub-header-container {
-	display: flex;
-	justify-content: center;
-}
-
 .cpco__sub-header {
+	display: flex;
+	justify-content: center;
+}
+
+.cpco__sub-header-text {
+	width: 195px;
 	font: $cp__site--font;
-	font-style: italic;
+	font-size: 1.8em;
 	text-align: center;
-	font-size: 15px;
-	line-height: 1.2;
-}
-
-/* Methods */
-.cpco__methods-container {
-	display: flex;
-	justify-content: center;
-}
-
-.cpco__methods-row {
-	width: 100%;
-}
-
-.cpco__method-container {
-	padding-top: 20px;
-	padding-bottom: 20px;
-}
-
-.cpco__methods-section {
-	width: 100%;
-	padding: 20px 20px 20px 20px;
-	background-color: green;
-}
-
-.cpco__contact-section--header {
-	display: flex;
-	justify-content: center;
-}
-
-.cpco__contact-section--header-message {
-	font: $cpho__pages--font;
-	color: $cpho__pages-link-text--colour;
-	font-size: 3vw;
-	line-height: 1.5;
-}
-
-.cpco__contact-section--subheader {
-	display: flex;
-	justify-content: center;
-}
-
-.cpco__contact-section--subheader-message {
-	font: $cpco__logo--font;
-	color: $cpho__pages-link-text--colour;
-	font-size: 1.2em;
-	line-height: 1.5;
-	margin-bottom: 20px;
-}
-
-.cpco__form-group-send {
-	margin-bottom: 0;
-}
-.cpco__socmeds-section {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-}
-
-.cpco__socmed {
-	margin-bottom: 10px;
-}
-
-.cpco__socmed-link {
-	display: flex;
-	align-items: center;
-}
-
-.cpco__socmed img {
-	width: 30px;
-	height: 30px;
-}
-
-.cpco__socmed-text {
-	font: $cpco__logo--font;
-	color: $cpho__pages-link-text--colour;
-	font-size: 1.1em;
-	margin-left: 10px;
-	overflow-wrap: break-word;
-	word-wrap: break-word;
-	hyphens: none;
-	word-break: break-all;
-}
-
-.cpco__btn-send {
-	color: white;
-	background-color: black;
-	border-color: black;
 }
 
 /* MEDIA QUERIES */
@@ -483,6 +409,23 @@ h1, h2, h3, p {
 	/* Page Links */
 	.cpho__pages-text {
 		font-size: 3.6em;
+	}
+
+	/* CAT PLAY CONTACT PAGE */
+	/* Banner */
+	.cpco__header {
+		height: 64px;
+	}
+
+	.cpco__header-text {
+		font-size: 2em;
+		padding-top: 4px;
+	}
+
+	/* Sub-header */
+	.cpco__sub-header-text {
+		width: 245px;
+		font-size: 2.3em;
 	}
 }
 
@@ -494,22 +437,22 @@ h1, h2, h3, p {
 		font-size: 4em;
 	}
 
-	/* Sub-header */
-	.cpco__sub-header {
-		font-size: 3vw;
-	}
-
 	/* CAT PLAY CONTACT PAGE */
-	/* Methods */
-	.cpco__socmed img {
-		width: 35px;
-		height: 35px;
+	/* Banner */
+	.cpco__header {
+		height: 70px;
 	}
 
-	.cpco__socmed-text {
-		font-size: 1.6em;
+	.cpco__header-text {
+		font-size: 2.7em;
+		padding-top: 6px;
 	}
 
+	/* Sub-header */
+	.cpco__sub-header-text {
+		width: 299px;
+		font-size: 3em;
+	}
 }
 
 @media only screen and (min-width : 580px) {
@@ -521,16 +464,21 @@ h1, h2, h3, p {
 	}
 
 	/* CAT PLAY CONTACT PAGE */
-	/* Methods */
-	.cpco__socmed img {
-		width: 40px;
-		height: 40px;
+	/* Banner */
+	.cpco__header {
+		height: 73px;
 	}
 
-	.cpco__socmed-text {
-		font-size: 2em;
+	.cpco__header-text {
+		font-size: 3.2em;
+		padding-top: 6px;
 	}
 
+	/* Sub-header */
+	.cpco__sub-header-text {
+		width: 332px;
+		font-size: 3.3em;
+	}
 }
 
 @media only screen and (min-width : 680px) {
@@ -541,6 +489,22 @@ h1, h2, h3, p {
 		font-size: 6em;
 	}
 
+	/* CAT PLAY CONTACT PAGE */
+	/* Banner */
+	.cpco__header {
+		height: 81px;
+	}
+
+	.cpco__header-text {
+		font-size: 3.5em;
+		padding-top: 6px;
+	}
+
+	/* Sub-header */
+	.cpco__sub-header-text {
+		width: 364px;
+		font-size: 3.5em;
+	}
 }
 
 @media only screen and (min-width : 768px) {
@@ -551,6 +515,22 @@ h1, h2, h3, p {
 		font-size: 7em;
 	}
 
+	/* CAT PLAY CONTACT PAGE */
+	/* Banner */
+	.cpco__header {
+		height: 102px;
+	}
+
+	.cpco__header-text {
+		font-size: 4.5em;
+		padding-top: 7px;
+	}
+
+	/* Sub-header */
+	.cpco__sub-header-text {
+		width: 472px;
+		font-size: 4.5em;
+	}
 }
 
 @media only screen and (min-width : 900px) {
@@ -561,6 +541,22 @@ h1, h2, h3, p {
 		font-size: 8em;
 	}
 
+	/* CAT PLAY CONTACT PAGE */
+	/* Banner */
+	.cpco__header {
+		height: 108px;
+	}
+
+	.cpco__header-text {
+		font-size: 5em;
+		padding-top: 8px;
+	}
+
+	/* Sub-header */
+	.cpco__sub-header-text {
+		width: 511px;
+		font-size: 5em;
+	}
 }
 
 @media only screen and (min-width : 992px) {
@@ -572,14 +568,21 @@ h1, h2, h3, p {
 	}
 
 	/* CAT PLAY CONTACT PAGE */
-	/* Methods */
-	.cpco__contact-section--header-message {
-		font-size: 35px;
-	}
-	.cpco__methods-section {
-		height: 391px;
+	/* Banner */
+	.cpco__header {
+		height: 111px;
 	}
 
+	.cpco__header-text {
+		font-size: 6em;
+		padding-top: 10px;
+	}
+
+	/* Sub-header */
+	.cpco__sub-header-text {
+		width: 590px;
+		font-size: 6em;
+	}
 }
 
 

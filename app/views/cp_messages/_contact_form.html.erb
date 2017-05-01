@@ -1,58 +1,65 @@
-<% if !notice.nil? %>  
-  <div class="container">  
-    <div id="error_explanation" class="notice-box">  
-      <%= notice %>  
-    </div>  
-  </div>  
-<% end %>  
-<h2>Send me a message.</h2>  
-<%= form_for @cp_message, :html => {:class => 'form-horizontal'} do |f| %>  
-  <% if @cp_message.errors.any? %>  
-    <div class="container">  
-      <div id="error_explanation" class="error-box">  
-        <h3>  
-          <%= "#{pluralize(@cp_message.errors.count, "error")} prohibited this message from being sent:" %>  
-        </h3>  
-        <ul>  
-          <% @cp_message.errors.full_messages.each do |msg| %>  
-            <li><%= msg %></li>  
-          <% end %>  
-        <ul>  
+<div class="cpco__method-container cpco__form-container col-md-6">
+  <div class="cpco__methods-section">
+    <% if !notice.nil? %>  
+      <div class="container">  
+        <div id="error_explanation" class="notice-box">  
+          <%= notice %>  
+        </div>  
       </div>  
-    </div>  
-  <% end %>  
- 
-  <div class="form-group">  
-    <%= f.label :name, class: 'col-sm-2 control-label' %>  
-    <div class="col-sm-8">  
-      <%= f.text_field :name, class: 'form-control form-entry', placeholder: "Your name" %>  
-    </div>  
-  </div>  
- 
-  <div class="form-group">  
-    <%= f.label :email, class: 'col-sm-2 control-label' %>  
-    <div class="col-sm-8">  
-      <%= f.email_field :email, class: 'form-control form-entry', placeholder: "Your email address" %>  
-    </div>  
-  </div>  
- 
-  <div class="form-group">  
-    <%= f.label :subject, class: 'col-sm-2 control-label' %>  
-    <div class="col-sm-8">  
-      <%= f.text_field :subject, class: 'form-control form-entry', placeholder: "What's the message about?" %>  
-    </div>  
-  </div>  
- 
-  <div class="form-group">  
-    <%= f.label :message, "Message", class: 'col-sm-2 control-label' %>  
-    <div class="col-sm-8">  
-      <%= f.text_area :message, class: 'form-control form-entry', placeholder: "Message body", rows: "4" %>  
-    </div>  
-  </div>  
- 
-  <div class="form-group">  
-    <div class="col-sm-offset-2 col-sm-8 ">  
-      <%= f.submit 'Send', class: 'btn btn-default', style: "width: 8em;" %>  
-    </div>  
-  </div>  
-<% end %>
+    <% end %>  
+    <%= form_for @cp_message, :html => {:class => 'form-horizontal'} do |f| %>  
+      <% if @cp_message.errors.any? %>  
+        <div class="container">  
+          <div id="error_explanation" class="error-box">  
+            <h3>  
+              <%= "#{pluralize(@cp_message.errors.count, "error")} prohibited this message from being sent:" %>  
+            </h3>  
+            <ul>  
+              <% @cp_message.errors.full_messages.each do |msg| %>  
+                <li><%= msg %></li>  
+              <% end %>  
+            </ul>  
+          </div>  
+        </div>  
+      <% end %>  
+      <div class="cpco__contact-section--header">
+        <div class="cpco__contact-section--header-message">
+          SEND US A MESSAGE
+        </div>
+      </div>
+      <div class="form-group">  
+        <div class="col-xs-12 col-sm-12">  
+          <%= f.text_field :name, class: 'form-control form-entry', placeholder: "Your name" %>  
+        </div>  
+      </div>  
+     
+      <div class="form-group">  
+        <div class="col-xs-12 col-sm-12">  
+          <%= f.email_field :email, class: 'form-control form-entry', placeholder: "Your email address" %>  
+        </div>  
+      </div>  
+     
+      <div class="form-group">  
+        <div class="col-xs-12 col-sm-12">  
+          <%= f.text_field :subject, class: 'form-control form-entry', placeholder: "What's the message about?" %>  
+        </div>  
+      </div>  
+     
+      <div class="form-group">  
+        <div class="col-xs-12 col-sm-12">  
+          <%= f.text_area :message, class: 'form-control form-entry', placeholder: "Message body", rows: "4" %>  
+        </div>  
+      </div>  
+     
+      <div class="form-group cpco__form-group-send">  
+        <div class="col-xs-5 col-sm-5">  
+        </div>  
+        <div class="col-xs-2 col-sm-2">  
+          <%= f.submit 'Send', class: 'btn btn-default cpco__btn-send', style: "width: 8em;" %>  
+        </div>  
+        <div class="col-xs-5 col-sm-5">  
+        </div>  
+      </div>  
+    <% end %>
+  </div>
+</div>
