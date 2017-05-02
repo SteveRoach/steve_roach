@@ -13,9 +13,9 @@ RSpec.feature "Send Contact Message", :type => :feature do
  
         visit "/cp_messages/new"  
  
-        fill_in "Name", with: @msg.name 
-        fill_in "Email", with: @msg.email 
-        fill_in "Subject", with: @msg.subject 
+        fill_in "Your name", with: @msg.name 
+        fill_in "Your email address", with: @msg.email 
+        fill_in "What's the message about?", with: @msg.subject 
         fill_in "Message", with: @msg.message 
  
         click_button "Send" 
@@ -26,9 +26,9 @@ RSpec.feature "Send Contact Message", :type => :feature do
     scenario "increments the Action Mailers by 1" do   
         visit "/cp_messages/new"  
  
-        fill_in "Name", with: @msg.name 
-        fill_in "Email", with: @msg.email 
-        fill_in "Subject", with: @msg.subject 
+        fill_in "Your name", with: @msg.name 
+        fill_in "Your email address", with: @msg.email 
+        fill_in "What's the message about?", with: @msg.subject 
         fill_in "Message", with: @msg.message 
  
         ActionMailer::Base.deliveries.clear 
@@ -43,9 +43,9 @@ RSpec.feature "Send Contact Message", :type => :feature do
     scenario "displays error message for blank name" do   
         visit "/cp_messages/new"  
  
-        fill_in "Name", with: "" 
-        fill_in "Email", with: @msg.email 
-        fill_in "Subject", with: @msg.subject 
+        fill_in "Your name", with: "" 
+        fill_in "Your email address", with: @msg.email 
+        fill_in "What's the message about?", with: @msg.subject 
         fill_in "Message", with: @msg.message 
  
         click_button "Send" 
@@ -56,9 +56,9 @@ RSpec.feature "Send Contact Message", :type => :feature do
     scenario "displays error message for too long name" do   
         visit "/cp_messages/new"  
  
-        fill_in "Name", with: "a" * 51 
-        fill_in "Email", with: @msg.email 
-        fill_in "Subject", with: @msg.subject 
+        fill_in "Your name", with: "a" * 51 
+        fill_in "Your email address", with: @msg.email 
+        fill_in "What's the message about?", with: @msg.subject 
         fill_in "Message", with: @msg.message 
  
         click_button "Send" 
@@ -69,9 +69,9 @@ RSpec.feature "Send Contact Message", :type => :feature do
     scenario "displays error message for blank email" do   
         visit "/cp_messages/new"  
  
-        fill_in "Name", with: @msg.name 
-        fill_in "Email", with: "" 
-        fill_in "Subject", with: @msg.subject 
+        fill_in "Your name", with: @msg.name 
+        fill_in "Your email address", with: "" 
+        fill_in "What's the message about?", with: @msg.subject 
         fill_in "Message", with: @msg.message 
  
         click_button "Send" 
@@ -82,9 +82,9 @@ RSpec.feature "Send Contact Message", :type => :feature do
     scenario "displays error message for too long email address" do   
         visit "/cp_messages/new"  
  
-        fill_in "Name", with: @msg.name 
-        fill_in "Email", with: ("a" * 245) + "@domain.com" 
-        fill_in "Subject", with: @msg.subject 
+        fill_in "Your name", with: @msg.name 
+        fill_in "Your email address", with: ("a" * 245) + "@domain.com" 
+        fill_in "What's the message about?", with: @msg.subject 
         fill_in "Message", with: @msg.message 
  
         click_button "Send" 
@@ -95,9 +95,9 @@ RSpec.feature "Send Contact Message", :type => :feature do
     scenario "displays error message for wrongly formatted email address" do   
         visit "/cp_messages/new"  
  
-        fill_in "Name", with: @msg.name 
-        fill_in "Email", with: "user@foo,com" 
-        fill_in "Subject", with: @msg.subject 
+        fill_in "Your name", with: @msg.name 
+        fill_in "Your email address", with: "user@foo,com" 
+        fill_in "What's the message about?", with: @msg.subject 
         fill_in "Message", with: @msg.message 
  
         click_button "Send" 
@@ -108,9 +108,9 @@ RSpec.feature "Send Contact Message", :type => :feature do
     scenario "displays error message for blank subject" do   
         visit "/cp_messages/new"  
  
-        fill_in "Name", with: @msg.name 
-        fill_in "Email", with: @msg.email 
-        fill_in "Subject", with: "" 
+        fill_in "Your name", with: @msg.name 
+        fill_in "Your email address", with: @msg.email 
+        fill_in "What's the message about?", with: "" 
         fill_in "Message", with: @msg.message 
  
         click_button "Send" 
@@ -121,9 +121,9 @@ RSpec.feature "Send Contact Message", :type => :feature do
     scenario "displays error message for too long subject" do   
         visit "/cp_messages/new"  
  
-        fill_in "Name", with: @msg.name 
-        fill_in "Email", with: @msg.email 
-        fill_in "Subject", with: "a" * 101 
+        fill_in "Your name", with: @msg.name 
+        fill_in "Your email address", with: @msg.email 
+        fill_in "What's the message about?", with: "a" * 101 
         fill_in "Message", with: @msg.message 
  
         click_button "Send" 
@@ -134,9 +134,9 @@ RSpec.feature "Send Contact Message", :type => :feature do
     scenario "displays error message for blank message" do   
         visit "/cp_messages/new"  
  
-        fill_in "Name", with: @msg.name 
-        fill_in "Email", with: @msg.email 
-        fill_in "Subject", with: @msg.subject 
+        fill_in "Your name", with: @msg.name 
+        fill_in "Your email address", with: @msg.email 
+        fill_in "What's the message about?", with: @msg.subject 
         fill_in "Message", with: "" 
  
         click_button "Send" 

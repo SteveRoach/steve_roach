@@ -1,32 +1,21 @@
 <div class="cpco__method-container cpco__form-container col-md-6">
   <div class="cpco__methods-section">
-    <% if !notice.nil? %>  
-      <div class="container">  
-        <div id="error_explanation" class="notice-box">  
-          <%= notice %>  
-        </div>  
-      </div>  
-    <% end %>  
     <%= form_for @cp_message, :html => {:class => 'form-horizontal'} do |f| %>  
-      <% if @cp_message.errors.any? %>  
-        <div class="container">  
-          <div id="error_explanation" class="error-box">  
-            <h3>  
-              <%= "#{pluralize(@cp_message.errors.count, "error")} prohibited this message from being sent:" %>  
-            </h3>  
-            <ul>  
-              <% @cp_message.errors.full_messages.each do |msg| %>  
-                <li><%= msg %></li>  
-              <% end %>  
-            </ul>  
-          </div>  
-        </div>  
-      <% end %>  
       <div class="cpco__contact-section--header">
         <div class="cpco__contact-section--header-message">
           SEND US A MESSAGE
         </div>
       </div>
+      <% if @cp_message.errors.any? %>  
+        <div id="error_explanation" class="error-box">  
+          <%= "#{pluralize(@cp_message.errors.count, "error")} prohibited this message from being sent:" %>  
+          <ul>  
+            <% @cp_message.errors.full_messages.each do |msg| %>  
+              <li><%= msg %></li>  
+            <% end %>  
+          </ul>  
+        </div>  
+      <% end %>  
       <div class="form-group">  
         <div class="col-xs-12 col-sm-12">  
           <%= f.text_field :name, class: 'form-control form-entry', placeholder: "Your name" %>  
@@ -47,10 +36,14 @@
      
       <div class="form-group">  
         <div class="col-xs-12 col-sm-12">  
-          <%= f.text_area :message, class: 'form-control form-entry', placeholder: "Message body", rows: "4" %>  
+          <%= f.text_area :message, class: 'form-control form-entry', placeholder: "Message" %>  
         </div>  
       </div>  
-     
+      <% if !notice.nil? %>  
+        <div id="error_explanation" class="notice-box">  
+          <%= notice %>  
+        </div>  
+      <% end %>  
       <div class="form-group cpco__form-group-send">  
         <div class="col-xs-5 col-sm-5">  
         </div>  

@@ -24,5 +24,5 @@ RSpec.feature "Site navigation", :type => :feature do
         click_link('', :href => '/cp_messages/new') 
         expect(page).to have_title('Cat Play | Contact') 
     end 
- 
+
 end  

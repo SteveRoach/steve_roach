@@ -476,6 +476,36 @@ h1, h2, h3, p {
 	border-color: black;
 }
 
+.notice-box {
+	font: $cpco__logo--font;
+	color: $cpho__pages-link-text--colour;
+	font-size: 2em;
+	padding: 5px;
+	text-align: center;
+	border: 3px solid white;
+	margin-bottom: 10px;
+}
+
+.error-box {
+	font: $cpco__logo--font;
+	color: red;
+	background-color: white;
+	font-size: 1.5em;
+	text-align: center;
+	border: 3px solid red;
+	padding: 5px;
+	margin-bottom: 15px;
+}
+
+.error-box ul {
+	margin-left: 30px;
+	margin-bottom: 0;
+}
+
+.error-box li {
+	text-align: left;
+}
+
 /* MEDIA QUERIES */
 @media only screen and (min-width : 400px) {
 
@@ -541,6 +571,12 @@ h1, h2, h3, p {
 		font-size: 6em;
 	}
 
+	/* CAT PLAY CONTACT PAGE */
+	/* Methods */
+	.error-box {
+		font-size: 2em;
+	}
+
 }
 
 @media only screen and (min-width : 768px) {
@@ -576,10 +612,6 @@ h1, h2, h3, p {
 	.cpco__contact-section--header-message {
 		font-size: 35px;
 	}
-	.cpco__methods-section {
-		height: 391px;
-	}
-
 }
 
 
