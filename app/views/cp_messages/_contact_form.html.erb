@@ -1,14 +1,14 @@
-<div class="cpco__method-container cpco__form-container col-md-6">
+<div class="cpco__methods--common cpco__contact col-md-6">
   <div class="cpco__methods-section">
     <%= form_for @cp_message, :html => {:class => 'form-horizontal'} do |f| %>  
-      <div class="cpco__contact-section--header">
-        <div class="cpco__contact-section--header-message">
-          SEND US A MESSAGE
+      <div class="cpco__methods--header">
+        <div>
+         SEND US A MESSAGE
         </div>
       </div>
       <% if @cp_message.errors.any? %>  
         <div id="error_explanation" class="error-box">  
-          <%= "#{pluralize(@cp_message.errors.count, "error")} prohibited this message from being sent:" %>  
+          <%= "Please fix these up and send again:" %>  
           <ul>  
             <% @cp_message.errors.full_messages.each do |msg| %>  
               <li><%= msg %></li>  

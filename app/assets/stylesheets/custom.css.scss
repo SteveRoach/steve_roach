@@ -10,26 +10,35 @@
 @import url('https://fonts.googleapis.com/css?family=Coming+Soon');
 
 /* Font family definitions */
-$cp__site--font-family: Arial, Helvetica, sans-serif;
-$cpho__logo--font-family: Arial, Helvetica, sans-serif;
-$cpho__pages--font-family: 'Coming Soon', Arial, sans-serif;
+$cp__header--font-family: 'Coming Soon', Arial, sans-serif;
+$cp__content--font-family: Arial, Helvetica, sans-serif;
 
 /* Mobile-first fonts
 (font-style [font-variant] font-weight font-size/line-height font-family)
 */
-$cp__site--font: normal bold 50px/100% $cpho__pages--font-family;
-$cpho__logo--font: normal bold 50px/100% $cpho__pages--font-family;
-$cpho__pages--font: normal 900 3em/100% $cpho__pages--font-family;
-$cpco__logo--font: normal bold 50px/100% $cpho__logo--font-family;
+$cpho__logo--font: normal bold 50px/100% $cp__content--font-family;
+$cpho__header--font: normal 900 3em/100% $cp__header--font-family;
+
+$cpco__header--font: normal 900 3em/100% $cp__header--font-family;
+$cpco__content--font: normal 900 3em/100% $cp__content--font-family;
+$cpco__subheader--font: normal 900 3em/100% $cp__content--font-family;
+$cpco__social-media-font: normal 900 3em/100% $cp__content--font-family;
+$cpco__contact-font: normal 900 3em/100% $cp__content--font-family;
 
 /* COLOURS */
-$cpho__home-page--background-colour: yellow;
-$cpho__home-page--foreground-colour: black;
+$cp__background-colour: yellow;
+$cp__foreground-colour: black;
+
 $cpho__pages-link-image--background-colour: white;
 $cpho__pages-link-image--border-colour--journal: blue;
 $cpho__pages-link-image--border-colour--technical: green;
 $cpho__pages-link-image--border-colour--contact: red;
 $cpho__pages-link-text--colour: white;
+
+$cpco__header-text--colour: white;
+$cpco__subheader-text--colour: white;
+$cpco__social-media-text--colour: white;
+$cpco__contact-text--colour: white;
 
 /* Universal */
 html {
@@ -40,8 +49,8 @@ html {
 body {
 	height: 100%;
 	font-size: 100%;
-	background-color: $cpho__home-page--background-colour;
-	color: $cpho__home-page--foreground-colour;
+	background-color: $cp__background-colour;
+	color: $cp__foreground-colour;
 }
 
 * {
@@ -50,7 +59,7 @@ body {
 }
 
 a, a:link, a.visited, a:hover, a:active {
-	color: $cpho__home-page--foreground-colour;
+	color: $cp__foreground-colour;
 	text-decoration: none;
 	outline: none;
 }
@@ -155,7 +164,7 @@ h1, h2, h3, p {
 
 /* Content container */
 .cpho__content {
-	background-color: $cpho__home-page--background-colour;
+	background-color: $cp__background-colour;
 }
 
 /* Logo */
@@ -305,7 +314,7 @@ h1, h2, h3, p {
 	bottom: auto;
 	-webkit-transform: translateY(-50%);
 	transform: translateY(-50%);
-	font: $cpho__pages--font;
+	font: $cpho__header--font;
 	color: $cpho__pages-link-text--colour;
 }
 
@@ -319,71 +328,54 @@ h1, h2, h3, p {
 	right: 0;
 }
 
-/* Miscellaneous */
-.debug_dump {   
-	clear: both;   
-	float: left;   
-	width: 100%;   
-	margin-top: 45px;
-	@include box_sizing; 
-}
-
-.bk-rd {
-  background-color: red;
-  opacity: 0.5;
-} 
-
-.bk-bl {
-  background-color: blue;
-  opacity: 0.5;
-} 
-
-.bk-gn {
-  background-color: green;
-  opacity: 0.5;
-} 
-
-.bk-yl {
-  background-color: yellow;
-  opacity: 0.5;
-} 
-
 /* CAT PLAY CONTACT PAGE */
 /* Header */
-.cpco__header-container {
+.cpco__header {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	justify-content: center;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
 }
 
-.cpco__header {
+.cpco__header--inner {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	align-items: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
 	background-color: black;
 	border: 0.7vw solid red;
 	border-radius: 1vw;
 	margin: 1vw 0;
 }
 
-.cpco__header img {
+.cpco__header--inner > img {
 	height: 10vw;
 	padding: 1vw 0;
 }
 
-.cpco__header-text {
-	font: $cpho__pages--font;
-	color: $cpho__pages-link-text--colour;
+.cpco__header--inner > div {
+	font: $cpco__header--font;
+	color: $cpco__header-text--colour;
 	padding: 1.5vw 2vw 0 0;
 	font-size: 7vw;
 }
 
 /* Sub-header */
-.cpco__sub-header-container {
+.cpco__sub-header {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	justify-content: center;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
 }
 
-.cpco__sub-header {
-	font: $cp__site--font;
+.cpco__sub-header--inner {
+	font: $cpco__content--font;
 	font-style: italic;
 	text-align: center;
 	font-size: 15px;
@@ -391,16 +383,20 @@ h1, h2, h3, p {
 }
 
 /* Methods */
-.cpco__methods-container {
+.cpco__methods--container {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	justify-content: center;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
 }
 
-.cpco__methods-row {
+.cpco__methods--row {
 	width: 100%;
 }
 
-.cpco__method-container {
+.cpco__methods--common {
 	padding-top: 20px;
 	padding-bottom: 20px;
 }
@@ -411,74 +407,108 @@ h1, h2, h3, p {
 	background-color: green;
 }
 
-.cpco__contact-section--header {
+.cpco__methods--header {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	justify-content: center;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
 }
 
-.cpco__contact-section--header-message {
-	font: $cpho__pages--font;
-	color: $cpho__pages-link-text--colour;
-	font-size: 3vw;
+.cpco__methods--header > div {
+	font: $cpco__header--font;
+	color: $cpco__header-text--colour;
+	font-size: 6vw;
 	line-height: 1.5;
 }
 
-.cpco__contact-section--subheader {
+.cpco__methods--subheader {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	justify-content: center;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
 }
 
-.cpco__contact-section--subheader-message {
-	font: $cpco__logo--font;
-	color: $cpho__pages-link-text--colour;
+.cpco__methods--subheader > div {
+	font: $cpco__subheader--font;
+	color: $cpco__subheader-text--colour;
 	font-size: 1.2em;
 	line-height: 1.5;
 	margin-bottom: 20px;
 }
 
-.cpco__form-group-send {
-	margin-bottom: 0;
-}
-.cpco__socmeds-section {
+/* Social Media */
+.cpco__social-media-section {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	flex-direction: column;
-	justify-content: center;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
 }
 
-.cpco__socmed {
+.cpco__social-media--inner {
 	margin-bottom: 10px;
 }
 
-.cpco__socmed-link {
+.cpco__social-media--link {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	align-items: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
 }
 
-.cpco__socmed img {
+.cpco__social-media--link > img {
 	width: 30px;
 	height: 30px;
 }
 
-.cpco__socmed-text {
-	font: $cpco__logo--font;
-	color: $cpho__pages-link-text--colour;
+.cpco__social-media--link > div {
+	font: $cpco__social-media-font;
+	color: $cpco__social-media-text--colour;
 	font-size: 1.1em;
 	margin-left: 10px;
 	overflow-wrap: break-word;
 	word-wrap: break-word;
-	hyphens: none;
+	-webkit-hyphens: none;
+	    -ms-hyphens: none;
+	        hyphens: none;
 	word-break: break-all;
 }
 
-.cpco__btn-send {
-	color: white;
-	background-color: black;
-	border-color: black;
+/* Contact */
+.cpco__contact .error-box {
+	font: $cpco__contact-font;
+	color: red;
+	background-color: white;
+	font-size: 1.5em;
+	text-align: left;
+	border: 3px solid red;
+	padding: 5px;
+	margin-bottom: 15px;
 }
 
-.notice-box {
-	font: $cpco__logo--font;
-	color: $cpho__pages-link-text--colour;
+.cpco__contact .error-box ul {
+	margin-left: 20px;
+	margin-bottom: 0;
+}
+
+.cpco__contact .error-box li {
+	text-align: left;
+}
+
+.cpco__contact .notice-box {
+	font: $cpco__contact-font;
+	color: $cpco__contact-text--colour;
 	font-size: 2em;
 	padding: 5px;
 	text-align: center;
@@ -486,24 +516,14 @@ h1, h2, h3, p {
 	margin-bottom: 10px;
 }
 
-.error-box {
-	font: $cpco__logo--font;
-	color: red;
-	background-color: white;
-	font-size: 1.5em;
-	text-align: center;
-	border: 3px solid red;
-	padding: 5px;
-	margin-bottom: 15px;
-}
-
-.error-box ul {
-	margin-left: 30px;
+.cpco__contact .cpco__form-group-send {
 	margin-bottom: 0;
 }
 
-.error-box li {
-	text-align: left;
+.cpco__contact .cpco__btn-send {
+	color: white;
+	background-color: black;
+	border-color: black;
 }
 
 /* MEDIA QUERIES */
@@ -525,21 +545,20 @@ h1, h2, h3, p {
 	}
 
 	/* Sub-header */
-	.cpco__sub-header {
+	.cpco__sub-header--inner {
 		font-size: 3vw;
 	}
 
 	/* CAT PLAY CONTACT PAGE */
-	/* Methods */
-	.cpco__socmed img {
+	/* Social Media */
+	.cpco__social-media--link > img {
 		width: 35px;
 		height: 35px;
 	}
 
-	.cpco__socmed-text {
+	.cpco__social-media--link > div {
 		font-size: 1.6em;
 	}
-
 }
 
 @media only screen and (min-width : 580px) {
@@ -552,15 +571,23 @@ h1, h2, h3, p {
 
 	/* CAT PLAY CONTACT PAGE */
 	/* Methods */
-	.cpco__socmed img {
+	.cpco__methods--header > div {
+		font-size: 5vw;
+	}
+
+	.cpco__methods--subheader > div {
+		font-size: 1.6em;
+	}
+
+	/* Social Media */
+	.cpco__social-media--link > img {
 		width: 40px;
 		height: 40px;
 	}
 
-	.cpco__socmed-text {
+	.cpco__social-media--link > div {
 		font-size: 2em;
 	}
-
 }
 
 @media only screen and (min-width : 680px) {
@@ -573,7 +600,7 @@ h1, h2, h3, p {
 
 	/* CAT PLAY CONTACT PAGE */
 	/* Methods */
-	.error-box {
+	.cpco__contact .error-box {
 		font-size: 2em;
 	}
 
@@ -597,6 +624,11 @@ h1, h2, h3, p {
 		font-size: 8em;
 	}
 
+	/* CAT PLAY CONTACT PAGE */
+	/* Methods */
+	.cpco__methods--header > div {
+		font-size: 4vw;
+	}
 }
 
 @media only screen and (min-width : 992px) {
@@ -609,10 +641,49 @@ h1, h2, h3, p {
 
 	/* CAT PLAY CONTACT PAGE */
 	/* Methods */
-	.cpco__contact-section--header-message {
-		font-size: 35px;
+	.cpco__methods--header > div {
+		font-size: 3vw;
 	}
 }
+
+@media only screen and (min-width : 1500px) {
+
+	/* CAT PLAY CONTACT PAGE */
+	/* Methods */
+	.cpco__methods--header > div {
+		font-size: 2.4vw;
+	}
+
+}
+
+/* Miscellaneous */
+.debug_dump {   
+	clear: both;   
+	float: left;   
+	width: 100%;   
+	margin-top: 45px;
+	@include box_sizing; 
+}
+
+.bk-rd {
+	background-color: red;
+	opacity: 0.5;
+} 
+
+.bk-bl {
+	background-color: blue;
+	opacity: 0.5;
+} 
+
+.bk-gn {
+	background-color: green;
+	opacity: 0.5;
+} 
+
+.bk-yl {
+	background-color: yellow;
+	opacity: 0.5;
+} 
 
 
 
