@@ -1,5 +1,6 @@
 <% provide(:base_title, "Cat Play") %>
 <% provide(:page_title, "Contact") %> 
+<%= render 'cat_play/page_logo_home_link' %>
 <div class="cpco__header">
 	<div class="cpco__header--inner">
 		<%= image_tag("contact_400x300_1.png", alt: "Cat Play Contact logo") %>
@@ -31,7 +32,7 @@
 					<div class="cpco__social-media--inner">
 						<%= link_to "https://www.facebook.com/kim.roach.75", :class => "cpco__social-media--link" do %>
 							<%= image_tag("logo_facebook_128x128.png", alt: "Kim's Facebook") %>
-							<div class="cpco__socmed-text">
+							<div>
 								KIM.ROACH.75
 							</div>
 						<% end %>
