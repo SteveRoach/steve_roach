@@ -28,19 +28,7 @@
 	<div class="cpho__content--group">
 		<div class="cpho__content">
 			<div class="cpho__header">
-				<%= link_to root_path do %>
-					<div class="cpho__header--inner">
-						<div class="cpho__header--text cpho__header--text-cat">
-							cat
-						</div>
-						<div class="cpho__header--image">
-							<%= render 'layouts/svg_logo' %>
-						</div>
-						<div class="cpho__header--text cpho__header--text-play">
-							play
-						</div>
-					</div>
-				<% end %>
+				<%= render 'cat_play/page_logo_home_link' %>
 			</div>
 			<div class="cpho__page-links">
 				<div class="cpho__page-link cpho__page-link--journal">
@@ -78,6 +66,11 @@
 				</div>
 				<div class="cpho__page-link cpho__page-link--base">
 					<%= image_tag("wooden_sign_base_1000x150.png", alt: "CPH Wooden sign base") %>
+				</div>
+			</div>
+			<div class="cpho__footer">
+				<div class="cpho__copyright-notice">
+					&copy; 2017 Steve Roach
 				</div>
 			</div>
 		</div>

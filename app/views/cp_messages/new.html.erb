@@ -1,17 +1,13 @@
 <% provide(:base_title, "Cat Play") %>
 <% provide(:page_title, "Contact") %> 
-<%= render 'cat_play/page_logo_home_link' %>
 <div class="cpco__header">
-	<div class="cpco__header--inner">
-		<%= image_tag("contact_400x300_1.png", alt: "Cat Play Contact logo") %>
-		<div>
-			Contact Us
-		</div>
+	<div class="cpco__logo">
+		<%= render 'cat_play/page_logo_home_link' %>
 	</div>
-</div>
-<div class="cpco__sub-header">
-	<div class="cpco__sub-header--inner">
-		The crew would love to hear from you
+	<div class="cpco__sub-header">
+		<div class="cpco__sub-header--inner">
+			The crew would love to hear from you
+		</div>
 	</div>
 </div>
 <div class="cpco__methods--container container">

@@ -1,4 +1,17 @@
 <% provide(:base_title, "Cat Play") %>
 <% provide(:page_title, "Journal") %> 
-<h1>CatPlay#cp_journal</h1>
-<p>Find me in app/views/cat_play/cp_journal.html.erb</p>
+<div class="cpjo__header">
+	<div class="cpjo__logo">
+		<%= render 'cat_play/page_logo_home_link' %>
+	</div>
+	<div class="cpjo__sub-header">
+		<div class="cpjo__sub-header--inner">
+			Life and times of the crew
+		</div>
+	</div>
+</div>
+<div class="cpjo__tbd">
+	<div class="cpjo__tbd-inner">
+		<%= image_tag("tbd.jpg", alt: "To Be Done") %>
+	</div>
+</div>

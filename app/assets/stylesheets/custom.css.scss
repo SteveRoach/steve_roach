@@ -24,10 +24,12 @@ $cpco__content--font: normal 900 3em/100% $cp__content--font-family;
 $cpco__subheader--font: normal 900 3em/100% $cp__content--font-family;
 $cpco__social-media-font: normal 900 3em/100% $cp__content--font-family;
 $cpco__contact-font: normal 900 3em/100% $cp__content--font-family;
+$cpco__copyright-notice-font: normal 900 3em/100% $cp__content--font-family;
 
 /* COLOURS */
 $cp__background-colour: yellow;
 $cp__foreground-colour: black;
+$cp__header-background--colour: #ffb000;
 
 $cpho__pages-link-image--background-colour: white;
 $cpho__pages-link-image--border-colour--journal: blue;
@@ -78,9 +80,8 @@ h1, h2, h3, p {
 /* COMMON ELEMENTS */
 /* Page Logo / Home Link */
 .cplo__logo {
-	position: absolute;
-	top: 1vw;
-	left: 1vw;
+	height: 84px;
+	width: 300px;
 }
 
 .cplo__logo--inner {
@@ -90,17 +91,31 @@ h1, h2, h3, p {
 	-webkit-box-align: center;
 	-ms-flex-align: center;
 	align-items: center;
-	justify-content: center;
+	width: 300px;
+}
+
+.cplo__logo--text {
+	font: $cpho__logo--font;
+	width: 117px;
+	height: 67px;
+}
+
+.cplo__logo--text-cat {
+	text-align: right;
+	padding-right: 6px;
+}
+
+.cplo__logo--text-play {
+	padding-left: 6px;
 }
 
 .cplo__logo--image {
-	width: 9vw;
+	width: 67px;
 }
 
 .cplo__logo--image img {
 	max-width: 100%;
 }
-
 
 /* CAT PLAY HOME PAGE */
 /* Parallax */
@@ -210,47 +225,12 @@ h1, h2, h3, p {
 	background-color: $cp__background-colour;
 }
 
-/* Header */
+/* Logo */
 .cpho__header {
-	height: 84px;
-	width: 300px;
 	position: absolute;
 	left: 50%; /* Horizontally center the image; 50% - 1/2 width of image */
 	-webkit-transform: translate(-50%, -445px);
 	transform: translate(-50%, -445px);
-}
-
-.cpho__header--inner {
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-align: center;
-	-ms-flex-align: center;
-	align-items: center;
-	width: 300px;
-}
-
-.cpho__header--text {
-	font: $cpho__logo--font;
-	width: 117px;
-	height: 67px;
-}
-
-.cpho__header--text-cat {
-	text-align: right;
-	padding-right: 6px;
-}
-
-.cpho__header--text-play {
-	padding-left: 6px;
-}
-
-.cpho__header--image {
-	width: 67px;
-}
-
-.cpho__header--image img {
-	max-width: 100%;
 }
 
 /* Page Links */
@@ -366,12 +346,47 @@ h1, h2, h3, p {
 }
 
 .cpho__page-link--base {
-	padding-bottom: 50px;
+	padding-bottom: 350px;
 }
 
-/* CAT PLAY CONTACT PAGE */
+/* Footer */
+.cpho__footer {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.cpho__copyright-notice {
+	font: $cpco__copyright-notice-font;
+	font-size: 3vw;
+	margin-right: 20px;
+}
+
+/* CAT PLAY JOURNAL PAGE */
 /* Header */
-.cpco__header {
+.cpjo__header {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	padding-bottom: 10px;
+	background-color: $cp__header-background--colour;
+}
+
+/* Logo */
+.cpjo__logo {
+	margin-top: 10px;
+}
+
+/* Sub-header */
+.cpjo__sub-header {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -380,32 +395,110 @@ h1, h2, h3, p {
 	        justify-content: center;
 }
 
-.cpco__header--inner {
+.cpjo__sub-header--inner {
+	font: $cpco__content--font;
+	font-style: italic;
+	text-align: center;
+	font-size: 15px;
+	line-height: 1.2;
+}
+
+/* TBD */
+.cpjo__tbd {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	margin: 10px 0;
+}
+
+.cpjo__tbd-inner > img {
+	width: 80vw;
+	max-width: 580px;
+	border: 5px solid black;
+	border-radius: 10px;
+}
+
+/* CAT PLAY TECHNICAL PAGE */
+/* Header */
+.cpte__header {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
 	-webkit-box-align: center;
 	    -ms-flex-align: center;
 	        align-items: center;
-	-ms-flex-pack: distribute;
-	    justify-content: space-around;
-	background-color: black;
-	border: 0.7vw solid red;
-	border-radius: 1vw;
-	margin: 1vw 0;
-	width: 55vw;
+	padding-bottom: 10px;
+	background-color: $cp__header-background--colour;
 }
 
-.cpco__header--inner > img {
-	height: 10vw;
-	padding: 1vw 0;
+/* Logo */
+.cpte__logo {
+	margin-top: 10px;
 }
 
-.cpco__header--inner > div {
-	font: $cpco__header--font;
-	color: $cpco__header-text--colour;
-	padding: 1.5vw 2vw 0 0;
-	font-size: 7vw;
+/* Sub-header */
+.cpte__sub-header {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+}
+
+.cpte__sub-header--inner {
+	font: $cpco__content--font;
+	font-style: italic;
+	text-align: center;
+	font-size: 15px;
+	line-height: 1.2;
+}
+
+/* TBD */
+.cpte__tbd {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	margin: 10px 0;
+}
+
+.cpte__tbd-inner > img {
+	width: 80vw;
+	max-width: 580px;
+	border: 5px solid black;
+	border-radius: 10px;
+}
+
+/* CAT PLAY CONTACT PAGE */
+/* Header */
+.cpco__header {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	padding-bottom: 10px;
+	background-color: $cp__header-background--colour;
+}
+
+/* Logo */
+.cpco__logo {
+	margin-top: 10px;
 }
 
 /* Sub-header */
@@ -621,13 +714,25 @@ h1, h2, h3, p {
 		font-size: 3.9em;
 	}
 
+	/* CAT PLAY JOURNAL PAGE */
 	/* Sub-header */
-	.cpco__sub-header--inner {
+	.cpjo__sub-header--inner {
+		font-size: 3vw;
+	}
+
+	/* CAT PLAY TECHNICAL PAGE */
+	/* Sub-header */
+	.cpte__sub-header--inner {
 		font-size: 3vw;
 	}
 
 	/* CAT PLAY CONTACT PAGE */
 	/* Social Media */
+	/* Sub-header */
+	.cpco__sub-header--inner {
+		font-size: 3vw;
+	}
+
 	.cpco__social-media--link > img {
 		width: 35px;
 		height: 35px;
@@ -689,6 +794,11 @@ h1, h2, h3, p {
 	/* Page Links */
 	.cpho__page-link-text {
 		font-size: 6.4em;
+	}
+
+	/* Footer */
+	.cpho__copyright-notice {
+		font-size: 1.5vw;
 	}
 
 }
